@@ -9,6 +9,9 @@
 <!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
     {% for gif in first_ten %}
         {% include 'gif.html' %}
+        <script type="text/javascript">
+            console.log(gif)
+        </script>
     {% endfor %}
 
 <!-- TODO: For each gif, include the 'gif.html' template to display it -->

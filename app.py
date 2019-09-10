@@ -10,20 +10,16 @@ def index():
     apikey = '3KIVL54QFKNV'
     lmt = 10
     # TODO: Extract query term from url
-    search_term = request.args.get("Search")
+    search_term = request.args.get("search")
     # TODO: Make 'params' dict with query term and API key
-    params = {search_term: apikey}
+    params = {'search': search_term, 'apikey': apikey, 'limit': lmt}
     # TODO: Make an API call to Tenor using the 'requests' library
-    r = requests.get(
-        "https://api.tenor.com/v1/search?q=%s&key=%s&limit=%s" % (search_term, apikey, lmt))
+    r = requests.get("https://api.tenor.com/v1/search", params = params)
     # TODO: Get the first 10 results from the search results
-    first_ten = json.loads(r.content)
+    first_ten = json.loads(r.content)["results"]
     print(first_ten)
     # TODO: Render the 'index.html' template, passing the gifs as a named parameter
-    gif_preview = r.json()
-    gif_parameters = gif_preview["url"]["dims"]["preview"]["size"]
-    return render_template("index.html", first_ten = first_ten)
-
+    return render_template("index.html", first_ten=first_ten)
 
 if __name__ == '__main__':
     app.run(debug=True)
