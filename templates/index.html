@@ -22,9 +22,10 @@
 
 <!-- Make a for loop to loop over GIFs passed in from the server -->
 <!-- And include 'gif.html' for each one -->
-    <div id="gifs">
-        {% for gif in first_ten %}
-            {% include 'gif.html' %}
-        {% endfor %}
-    </div>
+
+        <div class="grid">
+            {% for gif in first_ten %}
+                {% include 'gif.html' %}
+            {% endfor %}
+        </div>
 {% endblock %}

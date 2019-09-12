@@ -2,5 +2,10 @@ body {
     background-color: aqua;
     font-family: Verdana;
     width: 500px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
 }
