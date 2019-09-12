@@ -20,11 +20,23 @@
         </div>
     </form>
 
+    <form action ="/trending">
+        <div class="otherButtons">
+            <button type="submit">Trending</button>
+        </div>"
+    </form>
+
+    <!-- <form action ="/random">
+        <div class="otherButtons">
+            <button type="submit">Random</button>
+        </div>"
+    </form> -->
+
 <!-- Make a for loop to loop over GIFs passed in from the server -->
 <!-- And include 'gif.html' for each one -->
 
         <div class="grid">
-            {% for gif in first_ten %}
+            {% for gif in first_gifs %}
                 {% include 'gif.html' %}
             {% endfor %}
         </div>
