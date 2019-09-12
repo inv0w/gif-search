@@ -1,5 +1,6 @@
 body {
-    background-color: aqua;
+    background-color: #2f4353;
+    background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%);
     font-family: Verdana;
     width: 1510x;
     /* margin: 0 auto; */
@@ -8,4 +9,33 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 5px;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.searchBar {
+    text-align: center;
+}
+
+.searchBarStyle {
+    color: black;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.searchButton {
+      color: black;
+      text-align: center;
+      border-radius: 10px;
+      font-size: 24px;
+}
+.otherButtons{
+    color: black;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 24px;
 }
