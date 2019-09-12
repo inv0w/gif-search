@@ -36,8 +36,12 @@
 <!-- And include 'gif.html' for each one -->
 
         <div class="grid">
-            {% for gif in first_gifs %}
-                {% include 'gif.html' %}
-            {% endfor %}
+            {% if first_gifs != [] %}
+                {% for gif in first_gifs %}
+                    {% include 'gif.html' %}
+                {% endfor %}
+            {% else %}
+                No GIFs found! Try another term.
+            {% endif %}
         </div>
 {% endblock %}
