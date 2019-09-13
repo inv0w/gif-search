@@ -4,8 +4,8 @@ body {
     text-align: center;
     font-family: Verdana;
     width: 1510x;
-    /* margin: 0 auto; */
 }
+
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -13,11 +13,8 @@ body {
 }
 
 h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+    font-family:
 }
-
-
 
 .searchBarStyle {
     color: black;
@@ -30,14 +27,17 @@ h1 {
       border-radius: 10px;
       font-size: 24px;
 }
+
 .otherButtons{
     color: black;
     border-radius: 10px;
     font-size: 24px;
 }
+
 form {
-    display: inline-block; //Or display: inline;
+    display: inline-block;
 }
+
 .wrap {
     text-align: center;
 }

@@ -17,29 +17,29 @@
                 <button type="submit" class="searchButton">Submit</button>
         </div>
     </form>
-<div class ="wrap">
-    <form action ="/trending">
-        <div class="otherButtons">
-            <button type="submit">Trending</button>
-        </div>
-    </form>
+    <div class ="wrap">
+        <form action ="/trending">
+            <div class="otherButtons">
+                <button type="submit" title="Shows the top Trending GIFs on Tenor">Trending</button>
+            </div>
+        </form>
 
-    <form action ="/random">
-        <div class="otherButtons">
-            <button type="submit">Random</button>
-        </div>
-    </form>
-</div>
+        <form action ="/random">
+            <div class="otherButtons">
+                <button type="submit" title="Shows random gifs for a randomly selected trending search term">Random</button>
+            </div>
+        </form>
+    </div>
 <!-- Make a for loop to loop over GIFs passed in from the server -->
 <!-- And include 'gif.html' for each one -->
 
-        <div class="grid">
-            {% if first_gifs != [] %}
-                {% for gif in first_gifs %}
-                    {% include 'gif.html' %}
-                {% endfor %}
-            {% else %}
-                No GIFs found! Try another term.
-            {% endif %}
-        </div>
+    <div class="grid">
+        {% if first_gifs != [] %}
+            {% for gif in first_gifs %}
+                {% include 'gif.html' %}
+            {% endfor %}
+        {% else %}
+            No GIFs found! Try another term.
+        {% endif %}
+    </div>
 {% endblock %}
