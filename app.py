@@ -31,7 +31,8 @@ def index():
         first_gifs = None
 
     # Render the 'index.html' template
-    return render_template("index.html", first_gifs=first_gifs)
+    return render_template("index.html", first_gifs=first_gifs,
+                           search=search_term)
 
 
 @app.route('/trending')
@@ -55,7 +56,8 @@ def trending():
     else:
         first_gifs = None
 
-    return render_template("index.html", first_gifs=first_gifs)
+    return render_template("index.html", first_gifs=first_gifs,
+                           search="Trending")
 
 
 @app.route('/random')
@@ -91,7 +93,8 @@ def random():
     else:
         first_gifs = None
 
-    return render_template("index.html", first_gifs=first_gifs)
+    return render_template("index.html", first_gifs=first_gifs,
+                           search=search)
 
 
 if __name__ == '__main__':
