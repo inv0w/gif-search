@@ -18,13 +18,13 @@
         function updateSearch() {
             var term = document.getElementById("searchbar").value;
             var url = new URL(window.location.href);
-
             var query_string = url.search;
-
+            console.log(query_string)
+            query_string = query_string.replace("+", " ")
             var search_params = new URLSearchParams(query_string); 
-
-            // new value of "id" is set to "101"
+            console.log(search_params)
             search_params.set('search', term);
+            console.log(term)
 
             // change the search property of the main url
             url.search = search_params.toString();
@@ -41,7 +41,7 @@
         function setCaretPositionToEnd(elem) {
             // Modern browsers
             pos = document.getElementById(elem).value.length;
-            elem.setSelectionRange(pos, pos);
+            document.getElementById(elem).setSelectionRange(pos, pos);
         }
         
         /* // Set the cursor position of the "#test-input" element to the end when the page loads
@@ -57,9 +57,9 @@
                 name="search" 
                 placeholder="Search..." 
                 oninput="updateSearch()" 
-                onfocus="setCaretPositionToEnd(this)"
+                onfocus="setCaretPositionToEnd('searchbar')"
                 autofocus
-                value={{search}}>
+                value="{{search}}">
                 <button type="submit" class="searchButton">Submit</button>
         </div>
     </form>
