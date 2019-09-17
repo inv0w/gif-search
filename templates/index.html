@@ -16,15 +16,16 @@
 
     <script>
         function updateSearch() {
+            // Function from https://usefulangle.com/post/81/javascript-change-url-parameters
+
+            // Sets relevant variables (URL and query string)
             var term = document.getElementById("searchbar").value;
             var url = new URL(window.location.href);
             var query_string = url.search;
-            console.log(query_string)
-            query_string = query_string.replace("+", " ")
+
+            // Change search parameters
             var search_params = new URLSearchParams(query_string); 
-            console.log(search_params)
             search_params.set('search', term);
-            console.log(term)
 
             // change the search property of the main url
             url.search = search_params.toString();
@@ -43,10 +44,6 @@
             pos = document.getElementById(elem).value.length;
             document.getElementById(elem).setSelectionRange(pos, pos);
         }
-        
-        /* // Set the cursor position of the "#test-input" element to the end when the page loads
-        var input = document.getElementById('test-input');
-        setCaretPosition(input, input.value.length); */
     </script>
 
     <form action="/">
