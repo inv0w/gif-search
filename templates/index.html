@@ -14,6 +14,7 @@
         Term: {{ search }}
     </h2>
 
+<!-- Script that refreshes the page based off of the term in the search bar. -->
     <script>
         function updateSearch() {
             var term = document.getElementById("searchbar").value;
@@ -21,7 +22,7 @@
 
             var query_string = url.search;
 
-            var search_params = new URLSearchParams(query_string); 
+            var search_params = new URLSearchParams(query_string);
 
             // new value of "id" is set to "101"
             search_params.set('search', term);
@@ -43,42 +44,41 @@
             pos = document.getElementById(elem).value.length;
             elem.setSelectionRange(pos, pos);
         }
-        
+
         /* // Set the cursor position of the "#test-input" element to the end when the page loads
         var input = document.getElementById('test-input');
         setCaretPosition(input, input.value.length); */
     </script>
 
+<!-- Contains paramaters for the search bar and the search button. -->
     <form action="/">
         <div class="searchBar">
-                <input type="text" 
-                id="searchbar" 
-                class="searchBarStyle" 
-                name="search" 
-                placeholder="Search..." 
-                oninput="updateSearch()" 
+                <input type="text"
+                id="searchbar"
+                class="searchBarStyle"
+                name="search"
+                placeholder="Search..."
+                oninput="updateSearch()"
                 onfocus="setCaretPositionToEnd(this)"
                 autofocus
                 value={{search}}>
                 <button type="submit" class="searchButton">Submit</button>
         </div>
     </form>
+<!-- Wrap class alligns the trending and random buttons to be on the same line. -->
     <div class="wrap">
         <form action ="/trending">
-            <div class="otherButtons">
-                <button type="submit" title="Shows the top Trending GIFs on Tenor">Trending</button>
-            </div>
+                <button type="submit" class="otherButtons" title="Shows the top Trending GIFs on Tenor">Trending</button>
         </form>
 
         <form action="/random">
-            <div class="otherButtons">
-                <button type="submit" title="Shows random gifs for a randomly selected trending search term">Random</button>
-            </div>
+                <button type="submit" class="otherButtons" title="Shows random gifs for a randomly selected trending search term">Random</button>
         </form>
     </div>
 <!-- Make a for loop to loop over GIFs passed in from the server -->
 <!-- And include 'gif.html' for each one -->
 
+<!-- Loads gifs to be displayed on the web page. If no GIFs available to be dipslayed returns not found. -->
     <div class="grid">
         {% if first_gifs != [] %}
             {% for gif in first_gifs %}

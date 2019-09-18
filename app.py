@@ -11,7 +11,7 @@ def index():
     """Return homepage."""
     # Set parameters
     apikey = '3KIVL54QFKNV'
-    lmt = 12
+    lmt = 9
     search_term = request.args.get("search")
     c_filter = "high"
 
@@ -39,7 +39,7 @@ def index():
 def trending():
     """Return trending gifs"""
     apikey = '3KIVL54QFKNV'
-    lmt = 12
+    lmt = 9
     c_filter = "high"
 
     # Make dict of parameters
@@ -64,7 +64,7 @@ def trending():
 def random():
     """Return random gifs for a trending search term"""
     apikey = '3KIVL54QFKNV'
-    lmt = 12
+    lmt = 9
     c_filter = "high"
 
     # Make dict of parameters
