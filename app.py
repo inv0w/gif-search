@@ -11,8 +11,11 @@ def index():
     """Return homepage."""
     # Set parameters
     apikey = '3KIVL54QFKNV'
-    lmt = 9
-    search_term = request.args.get("search")
+    lmt = 12
+    if request.args.get("search") != None:
+        search_term = request.args.get("search")
+    else:
+        search_term = ""
     c_filter = "high"
 
     # Make dict from parameters
@@ -28,7 +31,7 @@ def index():
     if r.status_code == 200:  # If the request was successful
         first_gifs = json.loads(r.content)["results"]
     else:
-        first_gifs = None
+        first_gifs = "None"
 
     # Render the 'index.html' template
     return render_template("index.html", first_gifs=first_gifs,
@@ -39,7 +42,7 @@ def index():
 def trending():
     """Return trending gifs"""
     apikey = '3KIVL54QFKNV'
-    lmt = 9
+    lmt = 12
     c_filter = "high"
 
     # Make dict of parameters
@@ -64,7 +67,7 @@ def trending():
 def random():
     """Return random gifs for a trending search term"""
     apikey = '3KIVL54QFKNV'
-    lmt = 9
+    lmt = 12
     c_filter = "high"
 
     # Make dict of parameters
