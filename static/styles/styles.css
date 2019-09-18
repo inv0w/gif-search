@@ -29,15 +29,16 @@ h1 {
 .searchButton {
       color: black;
       border-radius: 10px;
-      font-size: 44px;
+      font-size: 24px;
       cursor: pointer;
 }
 
 .otherButtons {
     display: inline-block;
-    border-radius: 10px;
-    font-size: 24px;
+    border-radius: 5px;
+    font-size: 15px;
     cursor: pointer;
+
 
 }
 form {
@@ -46,4 +47,5 @@ form {
 
 .wrap {
     text-align: center;
+    padding: 5px;
 }
