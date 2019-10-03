@@ -2,7 +2,11 @@ from flask import Flask, render_template, request
 import requests
 import json
 from random import choice
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
+TENOR_API_KEY = os.getenv("TENOR_API_KEY")
 app = Flask(__name__)
 
 
@@ -10,7 +14,7 @@ app = Flask(__name__)
 def index():
     """Return homepage."""
     # Set parameters
-    apikey = '3KIVL54QFKNV'
+    apikey = TENOR_API_KEY
     lmt = 12
     if request.args.get("search") != None:
         search_term = request.args.get("search")
@@ -41,7 +45,7 @@ def index():
 @app.route('/trending')
 def trending():
     """Return trending gifs"""
-    apikey = '3KIVL54QFKNV'
+    apikey = TENOR_API_KEY
     lmt = 12
     c_filter = "high"
 
@@ -66,7 +70,7 @@ def trending():
 @app.route('/random')
 def random():
     """Return random gifs for a trending search term"""
-    apikey = '3KIVL54QFKNV'
+    apikey = TENOR_API_KEY
     lmt = 12
     c_filter = "high"
 
